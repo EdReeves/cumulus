@@ -1,0 +1,24 @@
+{
+  "name": "edreeves/cumulus",
+  "description": "Weather station project website",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Edward Reeves"
+    },
+    {
+      "name": "Connor Newton",
+      "email": "connor@ifthenelse.io"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "^1.22",
+    "alroniks/dtms": "^0.5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "edreeves\\cumulus\\": "src/assets/php"
+    }
+  }
+}
