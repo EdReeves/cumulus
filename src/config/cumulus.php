@@ -2,11 +2,7 @@
 
 use edreeves\cumulus\DateInterval;
 
-define('PDO_CONNECT','pgsql:dbname=database');
-define('PDO_USER', 'user');
-define('PDO_PASS', 'password');
-
-$views = [
+$selectors = [
     'temperature' => [
         'raw' => [
             'lt' => new DateInterval('PT0S'),
@@ -21,5 +17,11 @@ $views = [
             'gte' => new DateInterval('PT1H'),
             'from' => 'tbltemperature_1h',
         ],
+    ],
+];
+
+$formatters = [
+    'highcharts' => [
+        'timestamp' => 'psql_to_highcharts_timestamp',
     ],
 ];

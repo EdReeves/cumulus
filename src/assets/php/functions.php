@@ -17,3 +17,19 @@ function array_value_default($key, array $a, $default = null)
         return $default;
     }
 }
+
+/**
+ * Converts a PostgreSQL timestamp without fractional seconds to the Highcharts time
+ * format (unixtime * 1000)
+ *
+ * @param string $psqltime
+ * @return int
+ */
+function psql_to_highcharts_timestamp($psqltime)
+{
+    // Assume (for now) no data with fractional seconds
+    $datetime = DateTime::createFromFormat('Y-m-d H:i:se', $psqltime);
+    $unixtime = $datetime->getTimestamp();
+
+    return $unixtime * 1000;
+}

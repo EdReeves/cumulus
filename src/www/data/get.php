@@ -2,10 +2,12 @@
 
 $root = __DIR__.'/../../..';
 require_once($root.'/vendor/autoload.php');
-require_once($root.'/src/config.php');
+require_once($root.'/src/config/pdo.php');
+require_once($root.'/src/config/cumulus.php');
 
 use edreeves\cumulus\DateTime;
 use edreeves\cumulus\Selector;
+use edreeves\cumulus\Formatter;
 
 $table = $_GET['table'];
 if (!preg_match('/^[a-zA-Z0-9_]+$/', $table)) {
@@ -32,8 +34,11 @@ $start = $start ? new DateTime("@$start") : null;
 $end = $end ? new DateTime("@$end") : null;
 if (!$level) $level = null;
 
-$selector = new Selector($views[$table]);
-$json = $selector->getData($start, $end, $level);
+$selector = new Selector($selectors[$table]);
+$data = $selector->getData($start, $end, $level);
+
+$formatter = new Formatter($formatters['highcharts']);
+$data = $formatter->formatTable($data);
 
 header('Content-Type: text/javascript');
-echo $json;
+echo json_encode($data);

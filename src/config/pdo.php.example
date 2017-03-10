@@ -1,0 +1,5 @@
+<?php
+
+define('PDO_CONNECT','pgsql:dbname=database');
+define('PDO_USER', 'user');
+define('PDO_PASS', 'password');
