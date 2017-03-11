@@ -2,8 +2,8 @@
 
 $root = __DIR__.'/../../..';
 require_once($root.'/vendor/autoload.php');
-require_once($root.'/src/config/pdo.php');
-require_once($root.'/src/config/cumulus.php');
+require_once($root . '/conf/pdo.php');
+require_once($root . '/conf/cumulus.php');
 
 use edreeves\cumulus\DateTime;
 use edreeves\cumulus\Selector;

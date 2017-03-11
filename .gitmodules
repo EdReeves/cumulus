@@ -1,0 +1,6 @@
+[submodule "conf/yaml/nginx"]
+	path = conf/yaml/nginx
+	url = https://github.com/jdauphant/ansible-role-nginx.git
+[submodule "conf/yaml/git"]
+	path = conf/yaml/git
+	url = https://github.com/geerlingguy/ansible-role-git.git

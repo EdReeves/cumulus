@@ -1,0 +1,22 @@
+- hosts: all
+  roles:
+  - role: src
+  - role: nginx
+    nginx_http_params:
+      - access_log "/var/log/nginx/access.log"
+    nginx_sites:
+      cumulus:
+        - listen 8080
+        - server_name default_server
+        - index index.html index.htm
+        - root /var/www/cumulus
+        - location / { try_files $uri $uri/ =404; }
+        - >
+          location ~ \.php$ {
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_index index.php;
+            include fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+          }
+        - location ~ /\.ht { deny all; }

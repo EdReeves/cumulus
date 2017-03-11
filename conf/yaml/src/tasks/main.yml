@@ -1,0 +1,5 @@
+---
+- name: Clone repository
+  git:
+    repo=https://github.com/EdReeves/cumulus.git
+    dest=/var/lib/cumulus
