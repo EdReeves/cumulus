@@ -8,7 +8,7 @@
 - name: Link repository to site root
   when: repo_cloned|success
   file:
-    src=/var/lib/cumulus/src/www
+    src={{cumulus_root}}/src/www
     dest={{nginx_root}}
     state=link
 - name: Composer install

@@ -1,12 +1,15 @@
 [submodule "conf/yaml/nginx"]
-	path = conf/yaml/nginx
+	path = conf/yaml/roles/nginx
 	url = https://github.com/jdauphant/ansible-role-nginx.git
 [submodule "conf/yaml/git"]
-	path = conf/yaml/git
+	path = conf/yaml/roles/git
 	url = https://github.com/geerlingguy/ansible-role-git.git
 [submodule "conf/yaml/php"]
-	path = conf/yaml/php
+	path = conf/yaml/roles/php
 	url = https://github.com/geerlingguy/ansible-role-php.git
 [submodule "conf/yaml/unzip"]
-	path = conf/yaml/unzip
+	path = conf/yaml/roles/unzip
 	url = https://github.com/kbrebanov/ansible-unzip.git
+[submodule "conf/yaml/roles/composer"]
+	path = conf/yaml/roles/composer
+	url = https://github.com/geerlingguy/ansible-role-composer.git
