@@ -1,7 +1,7 @@
 - hosts: all
   roles:
-  - role: src
   - role: nginx
+    register: www_config
     nginx_http_params:
       - access_log "/var/log/nginx/access.log"
     nginx_sites:
@@ -20,3 +20,4 @@
             fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
           }
         - location ~ /\.ht { deny all; }
+  - role: src

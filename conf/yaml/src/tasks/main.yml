@@ -3,3 +3,11 @@
   git:
     repo=https://github.com/EdReeves/cumulus.git
     dest=/var/lib/cumulus
+    version=dev
+  register: repo_cloned
+- name: Link repository to site root
+  when: repo_cloned|success
+  file:
+    src=/var/lib/cumulus/src/www
+    dest=/var/www/cumulus
+    state=link
