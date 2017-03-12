@@ -4,3 +4,6 @@
 [submodule "conf/yaml/git"]
 	path = conf/yaml/git
 	url = https://github.com/geerlingguy/ansible-role-git.git
+[submodule "conf/yaml/php"]
+	path = conf/yaml/php
+	url = https://github.com/geerlingguy/ansible-role-php.git
