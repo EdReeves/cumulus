@@ -9,5 +9,5 @@
   when: repo_cloned|success
   file:
     src=/var/lib/cumulus/src/www
-    dest=/var/www/cumulus
+    dest={{nginx_root}}
     state=link
