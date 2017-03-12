@@ -1,4 +1,6 @@
 ---
+cumulus_root: "/var/lib/cumulus"
+
 nginx_access_log: "/var/log/nginx/access.log"
 nginx_port: 8080
 nginx_server_name: _

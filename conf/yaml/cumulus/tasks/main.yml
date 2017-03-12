@@ -2,7 +2,7 @@
 - name: Clone repository
   git:
     repo=https://github.com/EdReeves/cumulus.git
-    dest=/var/lib/cumulus
+    dest={{cumulus_root}}
     version=dev
   register: repo_cloned
 - name: Link repository to site root
@@ -11,3 +11,7 @@
     src=/var/lib/cumulus/src/www
     dest={{nginx_root}}
     state=link
+- name: Composer install
+  command: composer install
+  args:
+    chdir: "{{cumulus_root}}"

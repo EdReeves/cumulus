@@ -7,3 +7,6 @@
 [submodule "conf/yaml/php"]
 	path = conf/yaml/php
 	url = https://github.com/geerlingguy/ansible-role-php.git
+[submodule "conf/yaml/unzip"]
+	path = conf/yaml/unzip
+	url = https://github.com/kbrebanov/ansible-unzip.git

@@ -33,4 +33,7 @@ dependencies:
     - php-apcu
     - php-pdo
     - php-pgsql
+    - php-zip
     php_display_errors: "On"
+  - role: composer
+  - role: unzip
