@@ -37,3 +37,8 @@ dependencies:
     php_display_errors: "On"
   - role: composer
   - role: unzip
+  - role: postgresql
+    become: yes
+    postgresql_databases:
+      - name: "{{database_name}}"
+    postgresql_users: "{{database_users}}"

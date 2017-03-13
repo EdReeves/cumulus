@@ -2,6 +2,14 @@
 cumulus_root: "/var/lib/cumulus"
 
 nginx_access_log: "/var/log/nginx/access.log"
-nginx_port: 8080
+nginx_port: "8080"
 nginx_server_name: _
-nginx_root: /var/www/cumulus
+nginx_root: "/var/www/cumulus"
+
+database_name: "cumulus"
+database_user: "cumulus"
+database_users:
+  - name: "{{database_user}}"
+    password: "{{database_password}}"
+    db: "cumulus"
+    role_attr_flags: "SUPERUSER" # todo: yes, yes, very naughty of me but connection is local only

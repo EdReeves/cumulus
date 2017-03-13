@@ -15,3 +15,31 @@
   command: composer install
   args:
     chdir: "{{cumulus_root}}"
+#- name: Set permissions on www database user # todo: set up permissions properly
+#  postgresql_privs:
+#  args:
+#    database: "{{database_name}}"
+#    privs: ALL
+#    type: schema
+#    objs: public
+#    role: "{{database_user}}"
+#  become: yes
+#  become_user: postgres
+- name: Generate PHP PDO configuration file
+  template:
+    src=pdo.php.j2
+    dest={{cumulus_root}}/conf/pdo.php
+    owner=root
+    group=root
+- name: Generate database view initialization script
+  template:
+    src=sql_init_views.sh.j2
+    dest={{cumulus_root}}/src/assets/sh/sql_init_views.sh
+    owner=root
+    group=root
+  register: sql_init_views_generated
+#- name: Initialize database views # todo: set up socket for database_user
+#  when: sql_init_views_generated|success # todo: just do it manually for now
+#  command: "{{cumulus_root}}/src/assets/sh/sql_init_views.sh"
+#  become: yes
+#  become_user: postgres

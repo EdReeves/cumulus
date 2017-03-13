@@ -13,3 +13,6 @@
 [submodule "conf/yaml/roles/composer"]
 	path = conf/yaml/roles/composer
 	url = https://github.com/geerlingguy/ansible-role-composer.git
+[submodule "conf/yaml/roles/postgresql"]
+	path = conf/yaml/roles/postgresql
+	url = https://github.com/geerlingguy/ansible-role-postgresql.git

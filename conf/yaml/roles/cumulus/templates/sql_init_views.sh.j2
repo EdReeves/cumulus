@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd {{cumulus_root}}/src/assets/sql;
+
+while read file
+do
+    psql {{database_name}} < file
+done < <(find tables views -name *.sql)
